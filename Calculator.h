@@ -8,13 +8,13 @@
 
 #include <cstdint>
 
+
 class Calculator {
 
 public:
-    int add(int a, int b);
-    float add(float a, float b);
-    int add(uint8_t, short b);
-    float add(int a, short b);
+    template <typename T, typename U, typename V> T add(U a, V b){
+        return a + b;
+    }  
 };
 
 
