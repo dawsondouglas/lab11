@@ -1,4 +1,12 @@
-demo: main.cpp calculator.cpp
-	g++ -std=c++11 demo -Wall main.cpp calculator.cpp -o
-calculator.o: calculator.cpp
-	g++ std=c++11 -o calculator.cpp
+all: main.o Calculator.o
+	g++ -g main.o Calculator.o -o calculator
+
+main.o: main.cpp
+	g++ -g -c -Wall main.cpp
+
+Calculator.o: Calculator.cpp
+	g++ -g -c -Wall Calculator.cpp 
+
+
+clean:
+	rm -f *.o calculator
